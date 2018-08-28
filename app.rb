@@ -11,7 +11,6 @@ class Bkmk < Sinatra::Base
   get '/bookmarks' do
     @bookmarks = Bookmarks.all
     erb:index
-
   end
 
 
