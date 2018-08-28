@@ -12,10 +12,10 @@ The website will have the following specification:
 * US1. As a user, so I can go to a page I visit regularly, I would like to see a list of all bookmarks
 
 
-- US2. Add new bookmarks
-- US3.Delete bookmarks
-- US4. Update bookmarks
-- US5. Comment on bookmarks
-- US6. Tag bookmarks into categories
-- US7. Filter bookmarks by tag
-- US8. Users manage their bookmarks
+* US2. Add new bookmarks
+* US3.Delete bookmarks
+* US4. Update bookmarks
+* US5. Comment on bookmarks
+* US6. Tag bookmarks into categories
+* US7. Filter bookmarks by tag
+* US8. Users manage their bookmarks
