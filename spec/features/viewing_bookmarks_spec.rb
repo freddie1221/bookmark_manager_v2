@@ -1,11 +1,9 @@
-describe 'Bookmark Manager' do
+feature 'Bookmark Manager' do
 
-    feature 'shows a list of all saved bookmarks' do
-      visit '/'
+    scenario 'shows a list of all saved bookmarks' do
+      visit '/bookmarks'
       expect(page).to have_content 'www.google.com'
     end
-
-
 
 
 end
