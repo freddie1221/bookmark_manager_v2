@@ -4,8 +4,12 @@ require 'sinatra/base'
 class Bkmk < Sinatra::Base
   enable :sessions
 
-  get '/' do 
+  get '/' do
     'Hello world'
+  end
+
+  get '/bookmarks' do
+    erb(:bookmarks)
   end
 
 
