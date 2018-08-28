@@ -1,5 +1,5 @@
 require 'sinatra/base'
-# require './lib/bookmark'
+require './lib/bookmarks'
 
 class Bkmk < Sinatra::Base
   enable :sessions
@@ -9,7 +9,9 @@ class Bkmk < Sinatra::Base
   end
 
   get '/bookmarks' do
-    erb(:bookmarks)
+    @bookmarks = Bookmarks.all
+    erb: index
+
   end
 
 
