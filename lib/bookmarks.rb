@@ -2,12 +2,23 @@ require 'pg'
 
 class Bookmarks
 
+  
+attr_reader :url, :title
+
+  def initialize(url, title)
+    @url = url
+    @title = title
+  end
+
+
+  #-----------------------------
   def self.fetch_bookmarks
     db_result = decide_database.exec( "SELECT * FROM bookmarks")
   end
 
+
   def self.prettify_bookmarks(input)
-    input.map { |bookmark| [bookmark['url'], bookmark['title']]  }
+    input.map { |bookmark| Bookmarks.new(bookmark['url'], bookmark['title'])  }
   end
 
   def self.add(url, title)

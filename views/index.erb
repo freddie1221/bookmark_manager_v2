@@ -1,3 +1,7 @@
 <% @bookmarks.each do |item| %>
-<%= item %> </br> 
+
+
+<a href='<%= item.url %>'><%= item.title %></a>
+
+</br> 
 <% end %>
