@@ -6,6 +6,8 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require './spec/features/web_helpers'
+require 'test_database_emptier'
+
 
 Capybara.app = Bkmk
 
@@ -40,6 +42,10 @@ end
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  
+  config.before(:each) do
+    truncate_test_table
+  end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
