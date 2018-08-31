@@ -2,28 +2,32 @@ require 'pg'
 
 class Bookmarks
 
-  
-attr_reader :url, :title
+attr_reader :url, :title, :id
 
-  def initialize(url, title)
+  def initialize(url, title, id)
     @url = url
     @title = title
+    @id = id
   end
 
-
-  #-----------------------------
+  
   def self.fetch_bookmarks
-    db_result = decide_database.exec( "SELECT * FROM bookmarks")
+    decide_database.exec( "SELECT * FROM bookmarks")
   end
 
-
-  def self.prettify_bookmarks(input)
-    input.map { |bookmark| Bookmarks.new(bookmark['url'], bookmark['title'])  }
+  def self.prettify_bookmarks(input) # this is to create an array of objects from the return from DB
+    input.map { |bookmark| Bookmarks.new(bookmark['url'], bookmark['title'], bookmark['id'])  }
   end
 
   def self.add(url, title)
-    db_result = decide_database.exec( "INSERT INTO bookmarks(url, title) VALUES('#{url}', '#{title}')")
+    decide_database.exec( "INSERT INTO bookmarks(url, title) VALUES('#{url}', '#{title}')")
   end
+
+  
+  def self.delete(id)
+    decide_database.exec( "DELETE FROM bookmarks WHERE id = '#{id}'" )
+  end
+
 
   private
   def self.decide_database

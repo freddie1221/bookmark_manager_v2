@@ -7,6 +7,7 @@ gem 'rake'
 gem 'selenium-webdriver'
 gem 'sinatra'
 gem 'pg'
+gem 'pry'
 
 group :test do
   gem 'rspec'

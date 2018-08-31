@@ -5,12 +5,20 @@ class Bkmk < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Hello world'
+    redirect '/bookmarks'
   end
 
   get '/bookmarks' do
     @bookmarks = Bookmarks.prettify_bookmarks(Bookmarks.fetch_bookmarks)
-    erb:index
+    erb:bookmarks
+  end
+
+  post '/bookmarks' do
+    redirect '/deleted'
+  end
+
+  get '/deleted' do
+    'Success!'
   end
 
   get '/add' do
@@ -21,6 +29,8 @@ class Bkmk < Sinatra::Base
     Bookmarks.add(params[:url],params[:title])
     redirect '/bookmarks'
   end
+
+  
 
 
   run! if app_file == $0

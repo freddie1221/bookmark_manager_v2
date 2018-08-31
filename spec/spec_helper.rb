@@ -7,6 +7,7 @@ require 'simplecov'
 require 'simplecov-console'
 require './spec/features/web_helpers'
 require 'test_database_emptier'
+require 'pry'
 
 
 Capybara.app = Bkmk

@@ -18,3 +18,11 @@ feature 'add bookmarks' do
     expect(page).to have_content 'Reddit'
   end
 end
+
+
+feature 'delete bookmarks' do
+  scenario 'deletes a bookmark from the list of bookmarks' do
+    visit '/bookmarks'
+    click_on 'delete Makers Academy'
+  end
+end
