@@ -1,6 +1,32 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/flawson/projects/alastair_bookmark_manager/bookmark_manager/spec/features/viewing_bookmarks_features_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/flawson/projects/alastair_bookmark_manager/bookmark_manager/spec/units/bookmarks_spec.rb": [
         1,
         null,
@@ -24,22 +50,10 @@
         null,
         1,
         1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
         1,
         1,
         1,
         1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         null,
@@ -70,6 +84,6 @@
         null
       ]
     },
-    "timestamp": 1535733812
+    "timestamp": 1535792693
   }
 }

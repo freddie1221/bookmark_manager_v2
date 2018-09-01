@@ -13,16 +13,9 @@ class Bkmk < Sinatra::Base
     erb:bookmarks
   end
 
-  post '/bookmarks' do
-    redirect '/deleted'
-  end
-
-  get '/deleted' do
-    'Success!'
-  end
-
-  get '/add' do
-    erb:add
+  post '/bookmarks/:id' do
+    Bookmarks.delete(params['id'])
+    redirect '/bookmarks'
   end
 
   post '/add' do
@@ -30,10 +23,6 @@ class Bkmk < Sinatra::Base
     redirect '/bookmarks'
   end
 
-  
-
-
   run! if app_file == $0
-
 
 end

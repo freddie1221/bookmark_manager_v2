@@ -9,10 +9,9 @@ attr_reader :url, :title, :id
     @title = title
     @id = id
   end
-
   
   def self.fetch_bookmarks
-    decide_database.exec( "SELECT * FROM bookmarks")
+    decide_database.exec( "SELECT * FROM bookmarks ORDER BY id")
   end
 
   def self.prettify_bookmarks(input) # this is to create an array of objects from the return from DB
@@ -22,10 +21,9 @@ attr_reader :url, :title, :id
   def self.add(url, title)
     decide_database.exec( "INSERT INTO bookmarks(url, title) VALUES('#{url}', '#{title}')")
   end
-
   
   def self.delete(id)
-    decide_database.exec( "DELETE FROM bookmarks WHERE id = '#{id}'" )
+    decide_database.exec( "DELETE FROM bookmarks WHERE id = #{id}" )
   end
 
 

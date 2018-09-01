@@ -1,25 +1,28 @@
-<h1>Bookmarks index</h1>
+<h1>Bookmarks manager</h1>
 
 <% @bookmarks.each do |item| %>
 
+<li>
+ID: [<%=item.id%>] <a href='<%=item.url%>'><%=item.title%></a>
+</li>
 
-<a href='<%=item.url%>'><%=item.title%></a>
 
-<%# <form>
-<form action='/bookmarks' method='delete'>
-<input type='submit' value='delete'>
-</form> %>
-
+<form action="/bookmarks/<%= item.id %>" method="post">
+  <input type='hidden' name='_method' value='DELETE'>
+  <input type="submit" value="Delete <%=item.title%>">
+</form>
 
 </br> 
 <% end %>
 
-<%# I think the 'name' attribute in the form HTML element is responsible for passing things in the parameters %>
-<%# not sure how the destroy method should work %>
+<h3>Add a new bookmark?</h3>
 
-
-<form action='/bookmarks' method='post'>
-  <%# Title: <input type='text' name='title'> %>
-  <input type='submit' value='delete'>
-  
+<form action='/add' method='post'>
+  Url: <input type='text' name='url'>
+  Title: <input type='text' name='title'>
+  <input type='submit' value='submit'>
 </form>
+
+
+
+
